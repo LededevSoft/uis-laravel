@@ -1,4 +1,4 @@
-AmoCRM lib for API version 4
+Uis lib for API version 4
 
 For install add to composer file:
 ````
