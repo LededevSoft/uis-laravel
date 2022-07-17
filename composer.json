@@ -1,0 +1,30 @@
+{
+    "name": "lebedevsoft/uis-laravel",
+    "description": "Uis API lib for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LebedevSoft\\Uis\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lebedev Alexandr",
+            "email": "lebedev_as@bk.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.3"
+    },
+    "require-dev": {
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LebedevSoft\\Uis\\UisServiceProvider"
+            ]
+        }
+    }
+}
