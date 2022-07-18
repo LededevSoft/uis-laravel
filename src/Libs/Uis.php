@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Adminka\Uis\Libs;
+namespace LebedevSoft\Uis\Libs;
 
-use Adminka\Uis\Models\UisApps;
-use Adminka\Uis\Models\UisLogs;
+use LebedevSoft\Uis\Models\UisApps;
+use LebedevSoft\Uis\Models\UisLogs;
 use Illuminate\Database\Eloquent\Model;
 
 class Uis

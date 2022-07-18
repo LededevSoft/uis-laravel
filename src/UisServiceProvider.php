@@ -1,8 +1,8 @@
 <?php
 
-namespace Adminka\Uis;
+namespace LebedevSoft\Uis;
 
-use Adminka\UisSync\Console\Commands\UisSync;
+use LebedevSoft\UisSync\Console\Commands\UisSync;
 use Illuminate\Support\ServiceProvider;
 
 class UisServiceProvider extends ServiceProvider
