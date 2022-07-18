@@ -11,7 +11,7 @@ For install add to composer file:
     
 "config": {
         "gitlab-domains": [
-            "git.adminka.pro"
+            "lebedev_as@bk.ru"
         ],
         // available rows
     },
