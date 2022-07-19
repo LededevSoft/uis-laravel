@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Adminka\Uis\Libs;
+namespace LebedevSoft\Uis\Libs;
 
-use Adminka\Uis\Models\UisApps;
+use LebedevSoft\Uis\Models\UisApps;
 use Illuminate\Database\Eloquent\Model;
 
 class UisAuth

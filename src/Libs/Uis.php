@@ -37,7 +37,7 @@ class Uis
     {
         $url = "https://dataapi.uiscom.ru/v2.0";
 		$headers = array("Content-Type: application/json");
-        $error_codes = [-32001,-32602,-32603];
+        $error_codes = [-32001,-32602,-32603,-32700];
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -61,7 +61,7 @@ class Uis
 		
 		$url = "https://dataapi.uiscom.ru/v2.0";
 		$headers = array("Content-Type: application/json");
-        $error_codes = [-32001,-32602,-32603];
+        $error_codes = [-32001,-32602,-32603,-32700];
 		
 		$curl = curl_init($url);
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -99,22 +99,22 @@ class Uis
     }
 	public function getEmployees()
     {
-		$data='{"jsonrpc":"2.0","id":2,"method":"get.employees","params":{"access_token":"'.$this->access_token.',"limit":250,"offset":250}}';
+		$data='{"jsonrpc":"2.0","id":2,"method":"get.employees","params":{"access_token":"'.$this->access_token.'"}}';
         return $this->postCURL($data);
     }
 	public function getGroup_employees()
     {
-		$data='{"jsonrpc":"2.0","id":2,"method":"get.group_employees","params":{"access_token":"'.$this->access_token.'","limit":10000,"offset":250}}';
+		$data='{"jsonrpc":"2.0","id":2,"method":"get.group_employees","params":{"access_token":"'.$this->access_token.'"}}';
         return $this->postCURL($data);
     }
 	public function getTags()
     {
-		$data='{"jsonrpc":"2.0","id":2,"method":"get.tags","params":{"access_token":"'.$this->access_token.'","limit":10000,"offset":250}}';
+		$data='{"jsonrpc":"2.0","id":2,"method":"get.tags","params":{"access_token":"'.$this->access_token.'"}}';
         return $this->postCURL($data);
     }
 	public function getStatuses()
     {
-		$data='{"jsonrpc":"2.0","id":2,"method":"get.statuses","params":{"access_token":"'.$this->access_token.'","limit":10000,"offset":250}}';
+		$data='{"jsonrpc":"2.0","id":2,"method":"get.statuses","params":{"access_token":"'.$this->access_token.'"}}';
         return $this->postCURL($data);
     }	
 }
