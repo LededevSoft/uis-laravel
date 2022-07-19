@@ -82,19 +82,19 @@ class Uis
         }
     }
 
-    public function getCalls_report($date_from,$date_till,$page)
+    public function getCallsReport($date_from,$date_till,$page)
     {
-		$data='{"jsonrpc":"2.0","id":2,"method":"get.calls_report","params":{"access_token":"'.$this->access_token.'","limit":250,"offset":'.$page.',"date_from":"'.$date_from.'","date_till":"'.$date_till.'"}}';
+		$data='{"jsonrpc":"2.0","id":2,"method":"get.calls_report","params":{"access_token":"'.$this->access_token.'","limit":1000,"offset":'.$page.',"date_from":"'.$date_from.'","date_till":"'.$date_till.'"}}';
         return $this->postCURL($data);
     }
 	public function getFinancial_call_legs_report($date_from,$date_till,$page)
     {
-		$data='{"jsonrpc":"2.0","id":2,"method":"get.financial_call_legs_report","params":{"access_token":"'.$this->access_token.'","limit":250,"offset":'.$page.',"date_from":"'.$date_from.'","date_till":"'.$date_till.'"}}';
+		$data='{"jsonrpc":"2.0","id":2,"method":"get.financial_call_legs_report","params":{"access_token":"'.$this->access_token.'","limit":1000,"offset":'.$page.',"date_from":"'.$date_from.'","date_till":"'.$date_till.'"}}';
         return $this->postCURL($data);
     }
-	public function getCall_legs_report($date_from,$date_till,$page)
+	public function getCallLegsReport($date_from,$date_till,$page)
     {
-		$data='{"jsonrpc":"2.0","id":2,"method":"get.call_legs_report","params":{"access_token":"'.$this->access_token.'","limit":250,"offset":'.$page.',"date_from":"'.$date_from.'","date_till":"'.$date_till.'"}}';
+		$data='{"jsonrpc":"2.0","id":2,"method":"get.call_legs_report","params":{"access_token":"'.$this->access_token.'","limit":1000,"offset":'.$page.',"date_from":"'.$date_from.'","date_till":"'.$date_till.'"}}';
         return $this->postCURL($data);
     }
 	public function getEmployees()
