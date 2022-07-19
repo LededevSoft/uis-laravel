@@ -33,7 +33,7 @@ composer req adminka/amocrm-laravel
 
 After install lib run console command:
 ```
-php artisan vendor:publish --provider="Adminka\AmoCRM\AmoServiceProvider"
+php artisan vendor:publish --provider="LebedevSoft\Uis\UisServiceProvider"
 ```
 
-For use this lib, create object $amo = new AmoCRM(config("amo.app_id")) and use this object.
+For use this lib, create object $uis = new Uis(config("uis.app_id")) and use this object.
