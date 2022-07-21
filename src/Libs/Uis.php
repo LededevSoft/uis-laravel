@@ -37,7 +37,7 @@ class Uis
     {
         $url = "https://dataapi.uiscom.ru/v2.0";
 		$headers = array("Content-Type: application/json");
-        $error_codes = [-32001,-32602,-32603,-32700];
+        $error_codes = [-32001,-32602,-32603,-32700,-32029,];
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -61,7 +61,7 @@ class Uis
 		
 		$url = "https://dataapi.uiscom.ru/v2.0";
 		$headers = array("Content-Type: application/json");
-        $error_codes = [-32001,-32602,-32603,-32700];
+        $error_codes = [-32001,-32602,-32603,-32700,-32029,];
 		
 		$curl = curl_init($url);
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -71,6 +71,7 @@ class Uis
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
         $out = curl_exec($curl);
         curl_close($curl);
+		sleep(1);
         $res = json_decode($out, true);
 
         if ((isset($res["error"]["code"])) && (in_array($res["error"]["code"], $error_codes))) {
@@ -80,21 +81,22 @@ class Uis
             $this->db_logs->addLog("postCURL", "success", ["path" => parse_url($url, PHP_URL_PATH), "params" => $data, "response" => $res]);
             return $res;
         }
+			
     }
 
-    public function getCallsReport($date_from,$date_till,$page)
+    public function getCallsReport($date_from,$date_till)
     {
-		$data='{"jsonrpc":"2.0","id":2,"method":"get.calls_report","params":{"access_token":"'.$this->access_token.'","limit":1000,"offset":'.$page.',"date_from":"'.$date_from.'","date_till":"'.$date_till.'"}}';
+		$data='{"jsonrpc":"2.0","id":2,"method":"get.calls_report","params":{"access_token":"'.$this->access_token.'","limit":2000,"date_from":"'.$date_from.'","date_till":"'.$date_till.'"}}';
         return $this->postCURL($data);
     }
-	public function getFinancial_call_legs_report($date_from,$date_till,$page)
+	public function getFinancial_call_legs_report($date_from,$date_till)
     {
-		$data='{"jsonrpc":"2.0","id":2,"method":"get.financial_call_legs_report","params":{"access_token":"'.$this->access_token.'","limit":1000,"offset":'.$page.',"date_from":"'.$date_from.'","date_till":"'.$date_till.'"}}';
+		$data='{"jsonrpc":"2.0","id":2,"method":"get.financial_call_legs_report","params":{"access_token":"'.$this->access_token.'","limit":2000,"date_from":"'.$date_from.'","date_till":"'.$date_till.'"}}';
         return $this->postCURL($data);
     }
-	public function getCallLegsReport($date_from,$date_till,$page)
+	public function getCallLegsReport($date_from,$date_till)
     {
-		$data='{"jsonrpc":"2.0","id":2,"method":"get.call_legs_report","params":{"access_token":"'.$this->access_token.'","limit":1000,"offset":'.$page.',"date_from":"'.$date_from.'","date_till":"'.$date_till.'"}}';
+		$data='{"jsonrpc":"2.0","id":2,"method":"get.call_legs_report","params":{"access_token":"'.$this->access_token.'","limit":2000,"date_from":"'.$date_from.'","date_till":"'.$date_till.'"}}';
         return $this->postCURL($data);
     }
 	public function getEmployees()
