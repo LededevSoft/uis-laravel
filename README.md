@@ -70,7 +70,7 @@ For install add to composer file:
 
 Run console command:
 ```
-composer req adminka/amocrm-laravel
+composer req lebedevsoft/uis-laravel
 ```
 
 After install lib run console command:
